@@ -1,4 +1,5 @@
 import React from "react";
+import { showFormattedDate } from "../utils/getInitialData";
 
 const Note = ({ note, onDelete, onArchived }) => {
   return (
@@ -8,7 +9,7 @@ const Note = ({ note, onDelete, onArchived }) => {
         <span>{note.body}</span>
       </div>
       <div className="note-footer">
-        <small>{note.createdAt}</small>
+        <small>{showFormattedDate(note.createdAt)}</small>
         <div className="manage-note">
           <button className="note-delete" onClick={() => onDelete(note.id)}>Hapus</button>
           <button className="note-archived" onClick={() => onArchived(note.id)}>

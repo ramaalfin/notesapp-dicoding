@@ -1,6 +1,6 @@
 import React from "react";
 import { nanoid } from "nanoid";
-import { getData } from "../utils/getData";
+import { getInitialData } from "../utils/getInitialData";
 import AddNote from "./AddNote";
 import AktifNoteList from "./AktifNoteList";
 import ArchivedNoteList from "./ArchivedNoteList";
@@ -12,8 +12,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      notes: getData(),
-      cariNotes: getData(),
+      notes: getInitialData(),
+      cariNotes: getInitialData(),
     };
 
     this.addNoteHandle = this.addNoteHandle.bind(this);
